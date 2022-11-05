@@ -1,0 +1,99 @@
+/*Font imports*/
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: Skyregular;
+  src: url("sky-regular.woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: Skymedium;
+  src: url("sky-medium.woff2");
+  font-style: normal;
+}
+/*end*/
+
+/*Global font family style*/
+body {
+  font-family: "Skyregular", sans-serif;
+  letter-spacing: 4px;
+  background-color: #f9f9f9;
+}
+/*end*/
+
+/*Styling for the Mainheader and Mainsubheader*/
+#Mainheader {
+  font-family: "Skymedium", sans-serif;
+  letter-spacing: 4px;
+  font-size: 50px;
+  background: -webkit-linear-gradient(
+    319deg,
+    #fb8a53 20%,
+    #e7041b 38%,
+    #ee3edb 56%,
+    #0c2dff 69%,
+    #3dadfe 80%,
+    #3dadfe 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 30px;
+  text-align: center;
+}
+#Mainsubheader {
+  font-family: "Skymedium", sans-serif;
+  letter-spacing: 4px;
+  font-size: 30px;
+  background: -webkit-linear-gradient(
+    319deg,
+    #fb8a53 20%,
+    #e7041b 38%,
+    #ee3edb 56%,
+    #0c2dff 69%,
+    #3dadfe 80%,
+    #3dadfe 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  padding-bottom: 50px;
+}
+/*end*/
+
+/*Moviecontainer background styling and iamge alignment*/
+#moviecontainer {
+  background-image: linear-gradient(to right, #f53844, #42378f);
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#moviecontainer img {
+  max-width: 50%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+/*end*/
+
+/* Bootstrap custom card styling - movie cards */
+.card-title {
+  font-family: "Skymedium", sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+  padding-top: 2%;
+}
+
+.card-text {
+  text-align: left;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/*end*/
+
+#moviecontainerspacing {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
