@@ -18,6 +18,7 @@ body {
   font-family: "Skyregular", sans-serif;
   letter-spacing: 4px;
   background-color: #f9f9f9;
+  
 }
 /*end*/
 
@@ -61,13 +62,13 @@ body {
 /*end*/
 
 /*Moviecontainer background styling and iamge alignment*/
-#moviecontainer {
+#maincontentcontainer {
   background-image: linear-gradient(to right, #f53844, #42378f);
   display: block;
   margin-top: auto;
   margin-bottom: auto;
 }
-#moviecontainer img {
+#maincontentcontainer img {
   max-width: 50%;
   padding-top: 2%;
   padding-bottom: 2%;
@@ -96,4 +97,13 @@ body {
 #moviecontainerspacing {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+#menucontainer {
+  background-image: linear-gradient(to right, #f53844, #42378f);
+  margin-bottom: 0.75rem;
+  
+}
+.border-md-right {
+  border-right: 1px solid #F4A9B0;
 }
