@@ -9,3 +9,7 @@ def Home():
 @views.route('VIP')
 def VIP():
     return render_template("VIP.html")
+
+@views.route('login')
+def login():
+    return render_template("login.html")
