@@ -26,12 +26,12 @@ views = Blueprint('views', __name__)
 
 @views.route('/')
 def Home():
-    return render_template("home.html", movietitle=movie_title, moviesynopsis=movie_synopsis)
+    return render_template("home.html", title='Home', movietitle=movie_title, moviesynopsis=movie_synopsis)
 
 @views.route('VIP')
 def VIP():
-    return render_template("VIP.html")
+    return render_template("VIP.html", title='Sky VIP')
 
 @views.route('login')
 def login():
-    return render_template("login.html")
+    return render_template("login.html", title='My Account')
