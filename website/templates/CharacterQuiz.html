@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %} Sky Cinema | Home {% endblock %} {%
+block content_main %}
+
+<h2>What Christmas character are you?</h2>
+
+<div class="container">
+    <h1>Please login</h1>
+    <br>
+    <form action="" method="post">
+        <p>Which is your favourite weather?</p>
+        <input type="radio" id="Snow" name="Question1" value="{{
+          request.form.A }}">
+        <label for="snow">Snow</label><br>
+        <input type="radio" id="Sunshine" name="Question1" value="{{
+          request.form.B }}">
+        <label for="Sunshine">Sunshine</label><br>
+        <input type="radio" id="Rain" name="Question1" value="{{
+          request.form.C }}">
+        <label for="Rain">Rain</label><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br><hr><br>
+    <form action="" method="post">
+        <p>Which is your favourite weather?</p>
+        <input type="radio" id="Snow" name="Question2" value="{{
+          request.form.A }}">
+        <label for="snow">Snow</label><br>
+        <input type="radio" id="Sunshine" name="Question2" value="{{
+          request.form.B }}">
+        <label for="Sunshine">Sunshine</label><br>
+        <input type="radio" id="Rain" name="Question2" value="{{
+          request.form.C }}">
+        <label for="Rain">Rain</label><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br><hr><br>
+    <form action="" method="post">
+        <p>Which is your favourite weather?</p>
+        <input type="radio" id="Snow" name="Question3" value="{{
+          request.form.A }}">
+        <label for="snow">Snow</label><br>
+        <input type="radio" id="Sunshine" name="Question3" value="{{
+          request.form.B }}">
+        <label for="Sunshine">Sunshine</label><br>
+        <input type="radio" id="Rain" name="Question3" value="{{
+          request.form.C }}">
+        <label for="Rain">Rain</label><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br><hr><br>
+</div>
+
+{% endblock %}
