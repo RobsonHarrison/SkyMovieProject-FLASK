@@ -40,5 +40,6 @@ def characterquiz():
     input_values = []
     if request.method == 'POST':
         Q1 = request.form['Question1']
+        input_values.append(Q1)
 
     return render_template('CharacterQuiz.html')
