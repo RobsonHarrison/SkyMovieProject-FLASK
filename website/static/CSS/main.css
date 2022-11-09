@@ -1,6 +1,8 @@
 /*Font imports*/
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*Sky Fonts, stored in CSS folder*/
 @font-face {
   font-family: Skyregular;
   src: url("sky-regular.woff2");
@@ -13,7 +15,7 @@
 }
 /*end*/
 
-/*Global font family style*/
+/*Global font family style and body styling*/
 body {
   font-family: "Skyregular", sans-serif;
   letter-spacing: 4px;
@@ -61,7 +63,7 @@ body {
 }
 /*end*/
 
-/*Moviecontainer background styling and iamge alignment*/
+/*maincontentcontainer background styling and iamge alignment*/
 #maincontentcontainer {
   background-image: linear-gradient(to right, #f53844, #42378f);
   display: block;
@@ -94,16 +96,22 @@ body {
 }
 /*end*/
 
+/*spacing for the Bootstrap cards*/
 #moviecontainerspacing {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
+/*Navbar container*/
 #menucontainer {
   background-image: linear-gradient(to right, #f53844, #42378f);
   margin-bottom: 0.75rem;
-  
+
 }
+/*end*/
+
+ /*Menu item border styling*/
 .border-md-right {
   border-right: 1px solid #F4A9B0;
 }
+/*end*/
