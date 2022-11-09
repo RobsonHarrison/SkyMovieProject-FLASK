@@ -6,7 +6,7 @@ block content_main %}
 <div class="container">
     <h1>Please login</h1>
     <br>
-    <form action="" method="post">
+    <form action="" method="POST">
         <p>Which is your favourite weather?</p>
         <input type="radio" id="Snow" name="Question1" value="{{
           request.form.A }}">
@@ -20,7 +20,7 @@ block content_main %}
         <input type="submit" value="Submit">
     </form>
     <br><hr><br>
-    <form action="" method="post">
+    <form action="" method="POST">
         <p>Which is your favourite dog?</p>
         <input type="radio" id="alsation" name="Question2" value="{{
           request.form.A }}">
@@ -34,7 +34,7 @@ block content_main %}
         <input type="submit" value="Submit">
     </form>
     <br><hr><br>
-    <form action="" method="post">
+    <form action="" method="POST">
         <p>Which is your favourite cat?</p>
         <input type="radio" id="tiger" name="Question3" value="{{
           request.form.A }}">
@@ -48,6 +48,11 @@ block content_main %}
         <input type="submit" value="Submit">
     </form>
     <br><hr><br>
+</div>
+
+<div>
+    <p>{{show}}</p>
+    <ul>    </ul>
 </div>
 
 {% endblock %}
