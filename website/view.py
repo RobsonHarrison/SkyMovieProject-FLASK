@@ -2,8 +2,6 @@ from flask import Blueprint, render_template, request, redirect, url_for
 
 from website.user_login import loginuser
 
-
-
 #SQL for movie information
 import mysql.connector
 
@@ -18,6 +16,7 @@ query = ("SELECT film_title FROM movies")
 my_cursor.execute(query)
 for movies in my_cursor:
     movie_title = tuple(my_cursor.fetchall())
+    # movie_title = movie_title_input[0]
     # print(type(movie_title))
 my_cursor = db.cursor()
 query = ("SELECT film_synopsis FROM movies")
@@ -35,8 +34,7 @@ def Home():
 
 @views.route('/home/<name>', methods=['GET'])
 def loggedIn(name):
-
-    return render_template("home.html", name=name)
+    return render_template("home.html", name=name, movietitle=movie_title, moviesynopsis=movie_synopsis)
 
 @views.route('VIP')
 def VIP():
@@ -44,7 +42,6 @@ def VIP():
 
 @views.route('login', methods=['GET', 'POST'])
 def login():
-
     error = None
     if request.method == 'POST':
         if request.form['username'] == '' or request.form['password'] == '':
@@ -53,8 +50,8 @@ def login():
             username = request.form['username']
             password = request.form['password']
 
-            loginuser(username, password)
-            return redirect(url_for('views.loggedIn', name=username))
+            welcome = loginuser(username, password)
+            return redirect(url_for('views.loggedIn', name='welcome'))
     return render_template('login.html', error=error)
     #return render_template("login.html")
 
@@ -63,5 +60,6 @@ def characterquiz():
     input_values = []
     if request.method == 'POST':
         Q1 = request.form['Question1']
+        input_values.append(Q1)
 
     return render_template('CharacterQuiz.html')
