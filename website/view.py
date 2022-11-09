@@ -51,7 +51,9 @@ def login():
             password = request.form['password']
 
             welcome = loginuser(username, password)
+
             return redirect(url_for('views.loggedIn', name=welcome))
+
     return render_template('login.html', error=error)
     #return render_template("login.html")
 
