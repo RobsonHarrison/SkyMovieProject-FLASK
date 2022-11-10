@@ -1,4 +1,4 @@
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, RadioField
 from flask_wtf import FlaskForm
 
 # inheritance
