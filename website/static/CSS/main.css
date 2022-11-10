@@ -97,6 +97,7 @@ body {
 #moviecontainerspacing {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+
 }
 
 #menucontainer {
@@ -116,6 +117,7 @@ body {
   margin-top: 23px;
   }
 
+
 .center {
   display: block;
   margin-left: auto;
@@ -123,5 +125,11 @@ body {
   width: fit-content;
 }
 
+
+
+#movieinfo {
+    color: white;
+    text-align: center;
+}
 
 
