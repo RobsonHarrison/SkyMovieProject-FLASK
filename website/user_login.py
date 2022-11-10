@@ -10,7 +10,6 @@ mycursor = userDb.cursor()
 loggedIn = False
 
 def loginuser(username, password):
-    # User enters username and password
 
     # check password matches against username
     mycursor.execute(f'SELECT _password FROM users WHERE user_name = "{username}"')
