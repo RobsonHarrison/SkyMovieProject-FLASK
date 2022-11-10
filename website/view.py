@@ -36,9 +36,9 @@ def Home():
     return render_template("home.html", title='Home', movietitle="Nicki and William", moviesynopsis=movie_synopsis, movies=movies)
 
 
-@views.route('/home/<name>', methods=['GET'])
+@views.route('/VIP/<name>', methods=['GET'])
 def loggedIn(name):
-    return render_template("home.html", name=name, movietitle=movie_title, moviesynopsis=movie_synopsis)
+    return render_template("VIP.html", name=name)
 
 @views.route('VIP')
 def VIP():
