@@ -16,7 +16,7 @@ db = mysql.connector.connect(
 
 
 my_cursor = db.cursor()
-query = ("SELECT film_title, film_synopsis, title_image FROM movies order by rand() limit 3")
+query = ("SELECT film_title, film_synopsis, title_image, film_year, film_cert, sky_store  FROM movies order by rand() limit 3")
 my_cursor.execute(query)
 
 movies = my_cursor.fetchall()

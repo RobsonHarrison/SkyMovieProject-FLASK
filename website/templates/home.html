@@ -1,81 +1,26 @@
-{% extends "base.html" %}  {%
-block content_main %}
+{% extends "base.html" %} {% block content_main %}
 
-<!--<ul>-->
-<!--  {% for movie in movies %}-->
-<!--  <li>{{movie[0]}}</li>-->
+<!-- Begins row for movie 'cards' with an md 'column count' of 3-->
+<div class="row row-cols-md-3">
+  {% for movie in movies %}
 
-<!--  {% endfor %}-->
-<!--</ul>-->
-<div class="row row-cols-1 row-cols-md-3">
-{% for movie in movies %}
   <div class="col d-flex align-items-stretch" id="moviecontainerspacing">
     <div class="card bg-transparent border border-white">
+      <!-- Film_title DB column -->
       <h3 class="card-title">{{movie[0]}}</h3>
-      <img
-        src={{movie[2]}}
-        class="img-fluid mx-auto"
-        alt="..."
-      />
+      <!-- title_image DB column -->
+      <img src="{{movie[2]}}" class="img-fluid mx-auto" alt="..." />
       <div class="card-body">
-        <p class="card-text">
-        {{ movie[1]}}
-        </p>
+        <!-- film_synopsis DB column -->
+        <p class="card-text">{{ movie[1]}}</p>
       </div>
+      <!-- film_year and film_cert DB column-->
+      <p id="movieinfo"">{{movie[3]}} | Cert: {{movie[4]}}</p>
+      <!-- sky_store DB column which links each card to Sky Store webpage-->
+      <a href="{{movie[5]}}" class="stretched-link" target="_blank"></a>
     </div>
   </div>
-{% endfor %}
+  {% endfor %}
 </div>
 
-
-
-
-<!--{% for movie in movies %}-->
-<!--<div class="row row-cols-1 row-cols-md-3">-->
-<!--  <div class="col d-flex align-items-stretch" id="moviecontainerspacing">-->
-<!--    <div class="card bg-transparent border border-white">-->
-<!--      <h3 class="card-title">{{movie[0]}}</h3>-->
-<!--      <img-->
-<!--        src="https://images.store.sky.com/api/img/asset/en/66D8BB8A-E4E8-4422-9242-603110084545_38C4B9BE-D359-49A8-B16E-ACA7EDC2843C_2022-6-16-T9-49-18.jpg?s=260x371"-->
-<!--        class="img-fluid mx-auto"-->
-<!--        alt="..."-->
-<!--      />-->
-<!--      <div class="card-body">-->
-<!--        <p class="card-text">-->
-<!--        {{movie[1]}}-->
-<!--        </p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col d-flex align-items-stretch" id="moviecontainerspacing">-->
-<!--    <div class="card bg-transparent border border-white">-->
-<!--      <h3 class="card-title">{{movie[0]}}</h3>-->
-<!--      <img-->
-<!--        src="https://images.store.sky.com/api/img/asset/en/66D8BB8A-E4E8-4422-9242-603110084545_91E9473B-1530-47E1-9A63-33AC42A4BDFF_2022-8-28-T11-48-55.jpg?s=260x371"-->
-<!--        class="img-fluid, mx-auto"-->
-<!--        alt="..."-->
-<!--      />-->
-<!--      <div class="card-body">-->
-<!--        <p class="card-text">-->
-<!--        {{movie[1]}}-->
-<!--        </p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col d-flex align-items-stretch" id="moviecontainerspacing">-->
-<!--    <div class="card bg-transparent border border-white">-->
-<!--      <h3 class="card-title">{{movie[0]}}</h3>-->
-<!--      <img-->
-<!--        src="https://images.store.sky.com/api/img/asset/en/66D8BB8A-E4E8-4422-9242-603110084545_BFBACF28-99C8-4772-8F2D-554AD13C8D01_2022-7-14-T12-6-8.jpg?s=260x371"-->
-<!--        class="img-fluid, mx-auto"-->
-<!--        alt="..."-->
-<!--      />-->
-<!--      <div class="card-body">-->
-<!--        <p class="card-text">{{movie[1]}}-->
-<!--        </p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--{% endfor %}-->
 {% endblock %}
