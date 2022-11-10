@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content_main %}
 
-<!-- Begins row for movie 'cards' with an md 'column count' of 3-->
-<div class="row row-cols-md-3">
+<!-- Begins row for movie 'cards' with an md 'column count' of 3. 'row-cols-1, sets the breakpoint for repsonive to 1 column per row.-->
+<div class="row row-cols-1 row-cols-md-3">
   {% for movie in movies %}
 
   <div class="col d-flex align-items-stretch" id="moviecontainerspacing">
