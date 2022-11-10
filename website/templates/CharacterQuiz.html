@@ -4,47 +4,46 @@ block content_main %}
 <h2>What Christmas character are you?</h2>
 
 <div class="container">
-    <h1>Please login</h1>
     <br>
     <form action="" method="POST">
-        <p>Which is your favourite weather?</p>
-        <input type="radio" id="Snow" name="Question1" value="{{
+        <p>Do you leave milk and cookies for santa?</p>
+        <input type="radio" id="Yes1" name="Question1" value="{{
           request.form.A }}">
-        <label for="snow">Snow</label><br>
-        <input type="radio" id="Sunshine" name="Question1" value="{{
+        <label for="Yes1">Yes</label><br>
+        <input type="radio" id="No1" name="Question1" value="{{
           request.form.B }}">
-        <label for="Sunshine">Sunshine</label><br>
-        <input type="radio" id="Rain" name="Question1" value="{{
+        <label for="No1">No</label><br>
+        <input type="radio" id="Eat1" name="Question1" value="{{
           request.form.C }}">
-        <label for="Rain">Rain</label><br>
+        <label for="Eat1">I eat them myself!</label><br>
         <input type="submit" value="Submit">
     </form>
     <br><hr><br>
     <form action="" method="POST">
-        <p>Which is your favourite dog?</p>
-        <input type="radio" id="alsation" name="Question2" value="{{
+        <p>Will santa come down your chimney?</p>
+        <input type="radio" id="Yes2" name="Question2" value="{{
           request.form.A }}">
-        <label for="alsation">Alsation</label><br>
-        <input type="radio" id="Collie" name="Question2" value="{{
+        <label for="Yes2">Yes</label><br>
+        <input type="radio" id="No2" name="Question2" value="{{
           request.form.B }}">
-        <label for="Collie">Colliee</label><br>
-        <input type="radio" id="Badger" name="Question2" value="{{
+        <label for="No2">No</label><br>
+        <input type="radio" id="trap2" name="Question2" value="{{
           request.form.C }}">
-        <label for="Badger">Badger</label><br>
+        <label for="trap2">I've set a trap at the bottom of my chimney</label><br>
         <input type="submit" value="Submit">
     </form>
     <br><hr><br>
     <form action="" method="POST">
-        <p>Which is your favourite cat?</p>
-        <input type="radio" id="tiger" name="Question3" value="{{
+        <p>Is giving presents more important than receiving presents?</p>
+        <input type="radio" id="No3" name="Question3" value="{{
           request.form.A }}">
-        <label for="tiger">Tiger</label><br>
-        <input type="radio" id="leopard" name="Question3" value="{{
+        <label for="No3">No</label><br>
+        <input type="radio" id="Yes3" name="Question3" value="{{
           request.form.B }}">
-        <label for="leopard">Leopard</label><br>
-        <input type="radio" id="lion" name="Question3" value="{{
+        <label for="Yes3">Yes</label><br>
+        <input type="radio" id="Gimme3" name="Question3" value="{{
           request.form.C }}">
-        <label for="Lion">Lion</label><br>
+        <label for="Gimme3">I'll take your presents as well!</label><br>
         <input type="submit" value="Submit">
     </form>
     <br><hr><br>
