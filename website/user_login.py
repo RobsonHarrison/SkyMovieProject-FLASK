@@ -4,7 +4,7 @@ userDb = mysql.connector.connect(
     host="localhost",
     user="root",
     password="",
-    db="user_login"
+    db="skymovie_christmas"
 )
 mycursor = userDb.cursor()
 loggedIn = False
