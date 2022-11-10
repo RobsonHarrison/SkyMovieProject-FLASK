@@ -54,18 +54,22 @@ def login():
 
             return redirect(url_for('views.loggedIn', name=welcome))
 
-    return render_template('login.html', error=error)
+    return render_template('login.html', error=error, title='Login')
     #return render_template("login.html")
 
-@views.route('CharacterQuiz')
-def characterquiz():
-    input_values = []
-    if request.method == 'POST':
-        Q1 = request.form['Question1']
-        input_values.append(Q1)
-        Q2 = request.form['Question2']
-        input_values.append(Q2)
-        Q3 = request.form['Question3']
-        input_values.append(Q3)
 
-    return render_template('CharacterQuiz.html', show=input_values, list=input_values)
+@views.route('quiz')
+def Quiz():
+    return render_template("CharacterQuiz.html", title='Quiz')
+# @views.route('CharacterQuiz')
+# def characterquiz():
+#     input_values = []
+#     if request.method == 'POST':
+#         Q1 = request.form['Question1']
+#         input_values.append(Q1)
+#         Q2 = request.form['Question2']
+#         input_values.append(Q2)
+#         Q3 = request.form['Question3']
+#         input_values.append(Q3)
+#
+#     return render_template('CharacterQuiz.html', show=input_values, list=input_values)
