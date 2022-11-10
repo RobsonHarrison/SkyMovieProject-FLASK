@@ -10,19 +10,17 @@ mycursor = userDb.cursor()
 loggedIn = False
 
 def loginuser(username, password):
-    # User enters username and password
-    userName = username
-    password = password
+
     # check password matches against username
-    mycursor.execute(f'SELECT _password FROM users WHERE user_name = "{userName}"')
+    mycursor.execute(f'SELECT _password FROM users WHERE user_name = "{username}"')
     collect = mycursor.fetchone()
-    if password == collect:
-        mycursor.execute(f'SELECT first_name FROM users WHERE user_name = "{userName}"')
+    if password == collect[0]:
+        mycursor.execute(f'SELECT first_name FROM users WHERE user_name = "{username}"')
         nameWelcome = mycursor.fetchone()
-        welcome = nameWelcome[0]
+        output = nameWelcome[0]
         # print(f'Welcome {nameWelcome[0]}, You are now logged in!')
         loggedIn = True
-        return welcome
+        return output
 
         # print("Incorrect username or password")
 

@@ -2,6 +2,9 @@ from flask import Blueprint, render_template, request, redirect, url_for
 
 from website.user_login import loginuser
 
+
+#SQL for movie information
+
 import mysql.connector
 
 db = mysql.connector.connect(
@@ -15,11 +18,9 @@ db = mysql.connector.connect(
 my_cursor = db.cursor()
 query = ("SELECT film_title, film_synopsis, title_image FROM movies order by rand() limit 3")
 my_cursor.execute(query)
+
 movies = my_cursor.fetchall()
-    #for movie in movies:
-    #
-    # movie_titles = movie
-    #print(movie_title)
+
 my_cursor = db.cursor()
 query = ("SELECT film_synopsis FROM movies limit 3")
 my_cursor.execute(query)
@@ -37,8 +38,7 @@ def Home():
 
 @views.route('/home/<name>', methods=['GET'])
 def loggedIn(name):
-
-    return render_template("home.html", name=name)
+    return render_template("home.html", name=name, movietitle=movie_title, moviesynopsis=movie_synopsis)
 
 @views.route('VIP')
 def VIP():
@@ -46,7 +46,6 @@ def VIP():
 
 @views.route('login', methods=['GET', 'POST'])
 def login():
-
     error = None
     if request.method == 'POST':
         if request.form['username'] == '' or request.form['password'] == '':
@@ -55,15 +54,17 @@ def login():
             username = request.form['username']
             password = request.form['password']
 
-            loginuser(username, password)
-            return redirect(url_for('views.loggedIn', name=username))
-    return render_template('login.html', error=error)
-    #return render_template("login.html")
+            welcome = loginuser(username, password)
 
-@views.route('CharacterQuiz')
-def characterquiz():
-    input_values = []
-    if request.method == 'POST':
-        Q1 = request.form['Question1']
+            return redirect(url_for('views.loggedIn', name=welcome))
+    return render_template('login.html', error=error, title='Login')
 
-    return render_template('CharacterQuiz.html')
+
+    return render_template('login.html', error=error, title='Login')
+
+
+
+@views.route('quiz')
+def Quiz():
+    return render_template("CharacterQuiz.html", title='Quiz')
+

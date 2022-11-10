@@ -1,21 +1,31 @@
 
-{% extends "base.html" %} {% block title %} Sky Cinema | MY ACCOUNT {% endblock %} {%
-block pageheading %}MY ACCOUNT{% endblock %} {%block content_main %}
+{% extends "base.html" %} {% block title %} Sky Cinema | {{title}} {% endblock %} {%
+block pageheading %}{{title}}{% endblock %} {%block content_main %}
 
-<div class="container">
-      <h1>Please login</h1>
-      <br>
-      <form action="" method="post">
-        <input type="text" placeholder="Username" name="username" value="{{
-          request.form.username }}">
-         <input type="password" placeholder="Password" name="password" value="{{
-          request.form.password }}">
-        <input class="btn btn-default" type="submit" value="Login">
-      </form>
-      {% if error %}
+<br>
+<container id="contactform">
+<form action="" method="post">
+<div class="col-auto">
+  <label class="form-label">Username:</label>
+  <input type="text" class="form-control" value="{{
+          request.form.username }}" placeholder="Enter username" name="username">
+</div>
+<div class="col-auto">
+  <label class="form-label">Password:</label>
+  <input type="password" class="form-control" placeholder="Enter password" value="{{
+          request.form.password }}" name="password">
+</div>
+    <br>
+<div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3" value="Login">Login</button>
+</div>
+{% if error %}
+
         <p class="error"><strong>Error:</strong> {{ error }}
       {% endif %}
-    </div>
+
+</form>
+</container>
 
 {% endblock %}
 

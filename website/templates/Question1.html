@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %} Sky Cinema | Home {% endblock %} {%
+block content_main %}
+
+<h1>Question 1</h1>
+
+<div class='form'>
+            <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.first_name.label }} {{ form.first_name }}
+                <br><br>
+
+
+                {{ form.submit }}
+                <br>
+                <hr>
+            {{ message }}
+            </form>
+
+{% endblock %}
+
