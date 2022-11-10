@@ -24,13 +24,7 @@ def loginuser(username, password):
 
         # print("Incorrect username or password")
 
-
-
-
-
-
-def setPassword(password):
-
+def registerUser(password):
     valid = "no"
     while valid == "no":
         password = input("Please enter password: ")

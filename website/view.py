@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 
-from website.user_login import loginuser
+from website.user_login import loginuser, registerUser
 
 
 #SQL for movie information
@@ -60,11 +60,16 @@ def login():
     return render_template('login.html', error=error, title='Login')
 
 
-    return render_template('login.html', error=error, title='Login')
-
-
 
 @views.route('quiz')
 def Quiz():
     return render_template("CharacterQuiz.html", title='Quiz')
 
+
+@views.route('register', methods=['GET', 'POST'])
+def register():
+    error = None
+
+
+
+    return render_template("register.html", error=error, title='Register')

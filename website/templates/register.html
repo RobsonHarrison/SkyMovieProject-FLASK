@@ -1,6 +1,8 @@
+{% extends "base.html" %}
 
-{% extends "base.html" %} {% block title %} Sky Cinema | {{title}} {% endblock %} {%
-block pageheading %}{{title}}{% endblock %} {%block content_main %}
+{%block pageheading %}{{title}}{% endblock %}
+
+{%block content_main %}
 
 <br>
 <container id="contactform" class="center">
@@ -27,16 +29,7 @@ block pageheading %}{{title}}{% endblock %} {%block content_main %}
 </form>
 <hr>
 <div class="center">
-    <p>Don't have an account? </p><a href="{{ url_for('views.register') }}">Click here to register!</a>
+    <p>Already registered? </p><a href="{{ url_for('views.login') }}">Click here to login!</a>
 </div>
 
-{% if error %}
-
-        <p class="error"><strong>Error:</strong> {{ error }}
-      {% endif %}
-
-</form>
-</container>
-
 {% endblock %}
-
