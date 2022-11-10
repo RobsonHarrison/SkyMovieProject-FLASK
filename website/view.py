@@ -2,7 +2,9 @@ from flask import Blueprint, render_template, request, redirect, url_for
 
 from website.user_login import loginuser
 
+
 #SQL for movie information
+
 import mysql.connector
 
 db = mysql.connector.connect(
@@ -10,26 +12,28 @@ db = mysql.connector.connect(
     host = "localhost",
     password = "",
     database="skymovie_christmas"
-)
-my_cursor = db.cursor()
-query = ("SELECT film_title FROM movies")
-my_cursor.execute(query)
-for movies in my_cursor:
-    movie_title = tuple(my_cursor.fetchall())
-    # movie_title = movie_title_input[0]
-    # print(type(movie_title))
-my_cursor = db.cursor()
-query = ("SELECT film_synopsis FROM movies")
-my_cursor.execute(query)
-for movies in my_cursor:
-    #print (movies)
-    movie_synopsis=my_cursor.fetchall()
+    )
 
+
+my_cursor = db.cursor()
+query = ("SELECT film_title, film_synopsis, title_image FROM movies order by rand() limit 3")
+my_cursor.execute(query)
+
+movies = my_cursor.fetchall()
+
+my_cursor = db.cursor()
+query = ("SELECT film_synopsis FROM movies limit 3")
+my_cursor.execute(query)
+movie_synopsis=my_cursor.fetchall()
+    # for m in my_cursor:
+    #print (movies)
+
+#
 views = Blueprint('views', __name__)
 
 @views.route('/')
 def Home():
-    return render_template("home.html", title='Home', movietitle=movie_title, moviesynopsis=movie_synopsis)
+    return render_template("home.html", title='Home', movietitle="Nicki and William", moviesynopsis=movie_synopsis, movies=movies)
 
 
 @views.route('/home/<name>', methods=['GET'])
@@ -63,15 +67,4 @@ def login():
 @views.route('quiz')
 def Quiz():
     return render_template("CharacterQuiz.html", title='Quiz')
-# @views.route('CharacterQuiz')
-# def characterquiz():
-#     input_values = []
-#     if request.method == 'POST':
-#         Q1 = request.form['Question1']
-#         input_values.append(Q1)
-#         Q2 = request.form['Question2']
-#         input_values.append(Q2)
-#         Q3 = request.form['Question3']
-#         input_values.append(Q3)
-#
-#     return render_template('CharacterQuiz.html', show=input_values, list=input_values)
+
