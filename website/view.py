@@ -2,9 +2,6 @@ from flask import Blueprint, render_template, request, redirect, url_for
 
 from website.user_login import loginuser
 
-
-
-#SQL for movie information
 import mysql.connector
 
 db = mysql.connector.connect(
@@ -12,25 +9,30 @@ db = mysql.connector.connect(
     host = "localhost",
     password = "",
     database="skymovie_christmas"
-)
-my_cursor = db.cursor()
-query = ("SELECT film_title FROM movies")
-my_cursor.execute(query)
-for movies in my_cursor:
-    movie_title = tuple(my_cursor.fetchall())
-    # print(type(movie_title))
-my_cursor = db.cursor()
-query = ("SELECT film_synopsis FROM movies")
-my_cursor.execute(query)
-for movies in my_cursor:
-    #print (movies)
-    movie_synopsis=my_cursor.fetchall()
+    )
 
+
+my_cursor = db.cursor()
+query = ("SELECT film_title, film_synopsis, title_image FROM movies order by rand() limit 3")
+my_cursor.execute(query)
+movies = my_cursor.fetchall()
+    #for movie in movies:
+    #
+    # movie_titles = movie
+    #print(movie_title)
+my_cursor = db.cursor()
+query = ("SELECT film_synopsis FROM movies limit 3")
+my_cursor.execute(query)
+movie_synopsis=my_cursor.fetchall()
+    # for m in my_cursor:
+    #print (movies)
+
+#
 views = Blueprint('views', __name__)
 
 @views.route('/')
 def Home():
-    return render_template("home.html", title='Home', movietitle=movie_title, moviesynopsis=movie_synopsis)
+    return render_template("home.html", title='Home', movietitle="Nicki and William", moviesynopsis=movie_synopsis, movies=movies)
 
 
 @views.route('/home/<name>', methods=['GET'])
