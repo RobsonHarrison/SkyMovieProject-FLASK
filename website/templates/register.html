@@ -8,6 +8,21 @@
 <container id="contactform" class="center">
 <form action="" method="post">
     <div class="row">
+
+        <div class="auto">
+            <label class="form-label">First name:</label>
+                <input type="text" class="form-control" value="{{
+                    request.form.firstname }}" placeholder="Enter first name" name="firstname">
+            <label class="form-label">Last name:</label>
+                <input type="text" class="form-control" value="{{
+                    request.form.lastname }}" placeholder="Enter last name" name="lastname">
+            <label class="form-label">Email address:</label>
+                <input type="text" class="form-control" value="{{
+                    request.form.email }}" placeholder="Enter email" name="email">
+
+        </div>
+    </div>
+    <div class="row">
         <div class="auto">
             <label class="form-label">Username:</label>
             <input type="text" class="form-control" value="{{
@@ -19,12 +34,15 @@
             <label class="form-label">Password:</label>
             <input type="password" class="form-control" placeholder="Enter password" value="{{
               request.form.password }}" name="password">
+            <label class="form-label">Confirm password:</label>
+            <input type="password" class="form-control" placeholder="Confirm password" value="{{
+              request.form.con_password }}" name="con_password">
         </div>
     </div>
 
     <br>
     <div class="auto">
-        <button type="submit" class="btn btn-primary mb-3" value="Login">Login</button>
+        <button type="submit" class="btn btn-primary mb-3" value="Register">Register</button>
     </div>
 </form>
 <hr>
