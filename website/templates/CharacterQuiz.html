@@ -1,57 +1,6 @@
 {% extends "base.html" %} {% block title %} Sky Cinema | Home {% endblock %} {%
 block content_main %}
 
-<h2>What Christmas character are you?</h2>
 
-<div class="container">
-    <br>
-    <form action="" method="POST">
-        <p>Do you leave milk and cookies for santa?</p>
-        <input type="radio" id="Yes1" name="Question1" value="{{
-          request.form.A }}">
-        <label for="Yes1">Yes</label><br>
-        <input type="radio" id="No1" name="Question1" value="{{
-          request.form.B }}">
-        <label for="No1">No</label><br>
-        <input type="radio" id="Eat1" name="Question1" value="{{
-          request.form.C }}">
-        <label for="Eat1">I eat them myself!</label><br>
-        <input type="submit" value="Submit">
-    </form>
-    <br><hr><br>
-    <form action="" method="POST">
-        <p>Will santa come down your chimney?</p>
-        <input type="radio" id="Yes2" name="Question2" value="{{
-          request.form.A }}">
-        <label for="Yes2">Yes</label><br>
-        <input type="radio" id="No2" name="Question2" value="{{
-          request.form.B }}">
-        <label for="No2">No</label><br>
-        <input type="radio" id="trap2" name="Question2" value="{{
-          request.form.C }}">
-        <label for="trap2">I've set a trap at the bottom of my chimney</label><br>
-        <input type="submit" value="Submit">
-    </form>
-    <br><hr><br>
-    <form action="" method="POST">
-        <p>Is giving presents more important than receiving presents?</p>
-        <input type="radio" id="No3" name="Question3" value="{{
-          request.form.A }}">
-        <label for="No3">No</label><br>
-        <input type="radio" id="Yes3" name="Question3" value="{{
-          request.form.B }}">
-        <label for="Yes3">Yes</label><br>
-        <input type="radio" id="Gimme3" name="Question3" value="{{
-          request.form.C }}">
-        <label for="Gimme3">I'll take your presents as well!</label><br>
-        <input type="submit" value="Submit">
-    </form>
-    <br><hr><br>
-</div>
-
-<div>
-    <p>{{show}}</p>
-    <ul>    </ul>
-</div>
-
+<a data-quiz="QPC97QD5W" data-type=4 href="https://take.quiz-maker.com/QPC97QD5W">Loading...</a><script>(function(i,s,o,g,r,a,m){var ql=document.querySelectorAll('A[quiz],DIV[quiz],A[data-quiz],DIV[data-quiz]'); if(ql){if(ql.length){for(var k=0;k<ql.length;k++){ql[k].id='quiz-embed-'+k;ql[k].href="javascript:var i=document.getElementById('quiz-embed-"+k+"');try{qz.startQuiz(i)}catch(e){i.start=1;i.style.cursor='wait';i.style.opacity='0.5'};void(0);"}}};i['QP']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://take.quiz-maker.com/3012/CDN/quiz-embed-v1.js','qp');</script>
 {% endblock %}
