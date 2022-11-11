@@ -16,15 +16,15 @@ db = mysql.connector.connect(
 
 
 my_cursor = db.cursor()
-query = ("SELECT film_title, film_synopsis, title_image, film_year, film_cert, sky_store  FROM movies order by rand() limit 3")
+query = ("SELECT film_title, film_synopsis, title_image, film_year, film_cert, sky_store  FROM movies order by rand() limit 6")
 my_cursor.execute(query)
 
 movies = my_cursor.fetchall()
 
-my_cursor = db.cursor()
-query = ("SELECT film_synopsis FROM movies limit 3")
-my_cursor.execute(query)
-movie_synopsis=my_cursor.fetchall()
+# my_cursor = db.cursor()
+# query = ("SELECT film_synopsis FROM movies limit 3")
+# my_cursor.execute(query)
+# movie_synopsis=my_cursor.fetchall()
     # for m in my_cursor:
     #print (movies)
 
@@ -33,7 +33,7 @@ views = Blueprint('views', __name__)
 
 @views.route('/')
 def Home():
-    return render_template("home.html", title='Home', movietitle="Nicki and William", moviesynopsis=movie_synopsis, movies=movies)
+    return render_template("home.html", title='Home', movies=movies)
 
 
 @views.route('/VIP/<name>', methods=['GET'])
