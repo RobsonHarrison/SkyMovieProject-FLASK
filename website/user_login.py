@@ -119,4 +119,4 @@ def newUser(firstname, lastname, email, userName, password, passwordConfirm):
     mycursor.execute(f'insert into users(user_name, _password, email_address, first_name, last_name) values("{userName}", "{sendPassword}", "{email}", "{firstname}", "{lastname}");')
     userDb.commit() # Save in database
     # return username back to calling function for use on page
-    return userName
+    return firstname
