@@ -18,21 +18,18 @@ def loginuser(username, password):
         mycursor.execute(f'SELECT first_name FROM users WHERE user_name = "{username}"')
         nameWelcome = mycursor.fetchone()
         output = nameWelcome[0]
-        # print(f'Welcome {nameWelcome[0]}, You are now logged in!')
+        # Return name to show welcome message
         loggedIn = True
         return output
-
-        # print("Incorrect username or password")
 
 def setPassword(password, passwordConfirm):
     valid = "no"
     while valid == "no":
-        #password = input("Please enter password: ")
+        # Take password and run through check to ensure contains capital, lower, number, symbol and over 8 characters
         capsList = []
         lowerList = []
         numberList = []
         symbolList = []
-        #print("***********************************************************************")
         if len(password) >= 8:
             for caps in password:
                 if caps.isupper():
@@ -84,15 +81,13 @@ def setPassword(password, passwordConfirm):
                 #print("\033[92mWell done, your password is valid!\033[0m")
                 valid = "yes"
             else:
-                #print("\033[91mYour password is missing something, try again\033[0m")
+                # Password is missing something, need to send error and restart
                 error = "Password not valid"
                 return error
         else:
-            #print("\033[91mYour password is not long enough, please enter 8 characters or more\033[0m")
             error = "Password not valid"
             return error
     while True:
-        #passwordConfirm = input("Please re-enter your password: ")
         if passwordConfirm != password:
             error = "Passwords do not match!!"
             return error
@@ -104,7 +99,7 @@ def setPassword(password, passwordConfirm):
 def newUser(firstname, lastname, email, userName, password, passwordConfirm):
     # New user
     # Choose a username - must be unique
-    #userName = input("Please choose a user name: ")
+
     # Check database to ensure username is unique
     mycursor.execute("select user_name from users")
     nameCheck = mycursor.fetchall()
@@ -114,18 +109,14 @@ def newUser(firstname, lastname, email, userName, password, passwordConfirm):
             continue
         else:
             # If username already in use then start newUser function again
-            #print("Username already in use!")
             error = "Username already exists!!!"
             return error
     # If username is usable then run create password function, returns set password
     sendPassword = setPassword(password, passwordConfirm)
-    #print("Username free and password set! Continue account setup")
     # Once username set collect email, and name
-    #userEmail = input("Enter your email address: ")
-    #userFirst = input("Enter your first name: ")
-    #userLast = input("Enter your last name: ")
+
     # Send collected info to database
     mycursor.execute(f'insert into users(user_name, _password, email_address, first_name, last_name) values("{userName}", "{sendPassword}", "{email}", "{firstname}", "{lastname}");')
     userDb.commit() # Save in database
-    #login(loggedIn) # Get user to then log in with new login details
+    # return username back to calling function for use on page
     return userName
