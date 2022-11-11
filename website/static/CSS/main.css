@@ -24,6 +24,11 @@ body {
 /*end*/
 
 /*Styling for the Mainheader and Mainsubheader*/
+
+#Pageheader {
+font-family: "Skymedium", sans-serif;
+  letter-spacing: 4px;
+}
 #Mainheader {
   font-family: "Skymedium", sans-serif;
   letter-spacing: 4px;
