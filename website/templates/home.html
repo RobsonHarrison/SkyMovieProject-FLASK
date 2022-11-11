@@ -1,6 +1,12 @@
 {% extends "base.html" %} {% block content_main %}
+<div class="row row-cols-1 ">
+<h1 id="Pageheader">Welcome to Sky Christmas Magic.</h1>
+<p id="Pagewelcome"> Welcome to our Sky Christmas Project, created by Danny, Nicki, Robson, Steve and William.<br>
+This project was built using Flask, Python, Bootstrap, MYSQL, HTML, CSS and JS. <br>
+Use the menu bar to navigate our project and view a full collection of Christmas Movies from our MySQL Database.</p>
 
-<!-- Begins row for movie 'cards' with an md 'column count' of 3. 'row-cols-1, sets the breakpoint for repsonive to 1 column per row.-->
+</div>
+  <!-- Begins row for movie 'cards' with an md 'column count' of 3. 'row-cols-1, sets the breakpoint for repsonive to 1 column per row.-->
 <div class="row row-cols-1 row-cols-md-3">
   {% for movie in movies %}
 
