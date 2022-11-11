@@ -16,10 +16,16 @@ db = mysql.connector.connect(
 
 
 my_cursor = db.cursor()
-query = ("SELECT film_title, film_synopsis, title_image, film_year, film_cert, sky_store  FROM movies order by rand() limit 6")
+query = ("SELECT film_title, film_synopsis, title_image, film_year, film_cert, sky_store  FROM movies order by rand() limit 3")
 my_cursor.execute(query)
 
 movies = my_cursor.fetchall()
+
+my_cursor2 = db.cursor()
+query2 = ("SELECT film_title, film_synopsis, title_image, film_year, film_cert, sky_store  FROM movies order by rand()")
+my_cursor2.execute(query2)
+
+m_page = my_cursor2.fetchall()
 
 # my_cursor = db.cursor()
 # query = ("SELECT film_synopsis FROM movies limit 3")
@@ -64,6 +70,10 @@ def login():
 @views.route('quiz')
 def Quiz():
     return render_template("CharacterQuiz.html", title='Quiz')
+
+@views.route('/movie_page')
+def movie_page():
+    return render_template("movie_page.html", title='All Movies', m_page=m_page)
 
 
 @views.route('register', methods=['GET', 'POST'])
