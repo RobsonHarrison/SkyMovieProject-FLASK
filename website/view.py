@@ -50,6 +50,10 @@ def loggedIn(name):
 def VIP():
     return render_template("VIP.html", title='Sky VIP')
 
+@views.route('ourteam')
+def ourteam():
+    return render_template("team.html", title='Our Team')
+
 @views.route('login', methods=['GET', 'POST'])
 def login():
     error = None
