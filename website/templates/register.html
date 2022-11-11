@@ -5,57 +5,57 @@
 {%block content_main %}
 
 <br>
-<container id="contactform" class="center" style="text-align: center">
+<container id="contactform" class="center">
+
 <form action="" method="post">
     <div class="mb-3 row">
-            <label for="firstname" class="col-sm-4 col-form-label">First name:</label>
-                 <div class="col-sm-8">
-                     <input id="firstname" type="text" class="form-control" value="{{
-                    request.form.firstname }}" placeholder="Enter first name" name="firstname">
-                 </div><br><br>
-            <label for="lastname" class="col-sm-4 col-form-label">Last name:</label>
-                <div class="col-sm-8">
-                <input id="lastname" type="text" class="form-control" value="{{
-                    request.form.lastname }}" placeholder="Enter last name" name="lastname">
-                </div><br><br>
-            <label for="email" class="col-sm-4 col-form-label">Email address:</label>
-                <div class="col-sm-8">
-                <input id="email" type="text" class="form-control" value="{{
-                    request.form.email }}" placeholder="Enter email" name="email">
-                </div>
-
+        <label for="firstname" class="col-sm-4 col-form-label">First name:</label>
+        <div class="col-sm-8">
+            <input id="firstname" type="text" class="form-control" value="{{
+                 request.form.firstname }}" placeholder="Enter first name" name="firstname">
+        </div><br><br>
+        <label for="lastname" class="col-sm-4 col-form-label">Last name:</label>
+        <div class="col-sm-8">
+             <input id="lastname" type="text" class="form-control" value="{{
+                 request.form.lastname }}" placeholder="Enter last name" name="lastname">
+        </div><br><br>
+        <label for="email" class="col-sm-4 col-form-label">Email address:</label>
+        <div class="col-sm-8">
+             <input id="email" type="text" class="form-control" value="{{
+                 request.form.email }}" placeholder="Enter email" name="email">
+        </div>
     </div>
-    <div class="mb-3 row">
 
-            <label for="username" class="col-sm-4 col-form-label">Username:</label>
+    <div class="mb-3 row">
+        <label for="username" class="col-sm-4 col-form-label">Username:</label>
         <div class="col-sm-8">
             <input id="username" type="text" class="form-control" value="{{
                 request.form.username }}" placeholder="Enter username" name="username">
         </div>
     </div>
     <div class="row">
-
-            <label for="username" class="col-sm-4 col-form-label">Password:</label>
-            <div class="col-sm-8">
+        <label for="username" class="col-sm-4 col-form-label">Password:</label>
+        <div class="col-sm-8">
             <input type="password" class="form-control" placeholder="Enter password" value="{{
-              request.form.password }}" name="password">
-            </div><br><br>
-            <label for="username" class="col-sm-4 col-form-label">Confirm password:</label>
-                <div class="col-sm-8">
+                request.form.password }}" name="password">
+        </div><br><br>
+        <label for="username" class="col-sm-4 col-form-label">Confirm password:</label>
+        <div class="col-sm-8">
             <input type="password" class="form-control" placeholder="Confirm password" value="{{
-              request.form.con_password }}" name="con_password">
-                </div>
-
+                request.form.con_password }}" name="con_password">
+        </div>
     </div>
-
     <br>
-    <div class="auto">
+    <div class="center">
         <button type="submit" class="btn btn-primary mb-3" value="Register">Register</button>
     </div>
 </form>
+
+
 <hr>
 <div class="center">
     <p>Already registered? </p><a href="{{ url_for('views.login') }}" class="btn btn-primary mb-3">Click here to login!</a>
 </div>
+</container>
 
 {% endblock %}
