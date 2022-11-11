@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 
-from website.user_login import loginuser, registerUser
+from website.user_login import loginuser, newUser
 
 
 #SQL for movie information
@@ -69,7 +69,25 @@ def Quiz():
 @views.route('register', methods=['GET', 'POST'])
 def register():
     error = None
-
-
-
+    if request.method == 'POST':
+        if request.form['username'] == '' or request.form['password'] == '' or request.form['con_password'] == '' or request.form['email'] == '':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            userName = request.form['username']
+            password = request.form['password']
+            passwordConfirm = request.form['con_password']
+            firstname = request.form['firstname']
+            lastname = request.form['lastname']
+            email = request.form['email']
+            reg_name = newUser(firstname, lastname, email, userName, password, passwordConfirm)
+        return redirect(url_for("views.success", title='Success', name=reg_name))
     return render_template("register.html", error=error, title='Register')
+
+@views.route('/success/<name>', methods=['GET'])
+def success(name):
+        # if name == 'Username%20already%20exists!!!':
+        #     outcome = 'Username already exists!'
+        # else:
+        #     pass
+
+    return render_template("success.html", name=name)
