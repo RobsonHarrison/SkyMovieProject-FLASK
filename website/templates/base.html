@@ -74,11 +74,12 @@
               <li class="nav-item border-md-right">
                 <a class="nav-link" href="{{ url_for('views.Quiz') }}">Quiz</a>
               </li>
-
               <li class="nav-item border-md-right">
-                <a class="nav-link" href="{{ url_for('views.login') }}">Login</a>
+                <a class="nav-link" href="{{ url_for('views.movie_page') }}">All Movies</a>
               </li>
-             <li class="nav-item dropdown d-flex justify-content-end">
+
+
+             <li class="nav-item dropdown border-md-right">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               More from sky
             </a>
@@ -92,6 +93,9 @@
               <li><a class="dropdown-item" href="https://www.sky.com/shop/mobile" target="_blank">Sky Mobile</a></li>
             </ul>
         </li>
+               <li class="nav-item border-md-right">
+                <a class="nav-link" href="{{ url_for('views.login') }}">Login</a>
+              </li>
             </ul>
           </div>
         </div>

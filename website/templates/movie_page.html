@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content_main %}
+
+<!-- Begins row for movie 'cards' with an md 'column count' of 3. 'row-cols-1, sets the breakpoint for repsonive to 1 column per row.-->
+<div class="row row-cols-1 row-cols-md-3">
+  {% for movie in m_page %}
+
+  <div class="col d-flex align-items-stretch" id="moviecontainerspacing">
+    <div class="card  border border-white" style="background-color: rgba(255, 255, 255, .15); box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);">
+      <!-- Film_title DB column -->
+      <h3 class="card-title">{{movie[0]}}</h3>
+      <!-- title_image DB column -->
+      <img src="{{movie[2]}}" class="img-fluid mx-auto" alt="..." />
+      <div class="card-body">
+        <!-- film_synopsis DB column -->
+        <p class="card-text">{{ movie[1]}}</p>
+      </div>
+      <!-- film_year and film_cert DB column-->
+      <p id="movieinfo">{{movie[3]}} | Cert. {{movie[4]}}</p>
+      <!-- sky_store DB column which links each card to Sky Store webpage-->
+      <a href="{{movie[5]}}" class="stretched-link" target="_blank"></a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
