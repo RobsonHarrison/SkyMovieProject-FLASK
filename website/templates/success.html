@@ -4,6 +4,9 @@
 
 {%block content_main %}
 
-<p>{{outcome}}</p>
-
+<div class="center" style="text-align: center">
+    <h1>Congratulations {{name}}!</h1>
+    <h2>You have successfully registered with Sky Christmas movies!</h2>
+    <a href="{{ url_for('views.VIP') }}" class="btn btn-primary mb-3">Click here to see your VIP rewards!</a>
+</div>
 {% endblock %}
